@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+VisualVM -> JmxApp: Connect to JMX server
+JmxApp --> VisualVM: Authenticated Response
+
+VisualVM -> JmxApp: Change log level request
+
+JmxApp -> MyMBeanImpl
+MyMBeanImpl --> JmxApp
+
+VisualVM <-- JmxApp: OK
+
+@enduml
